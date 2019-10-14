@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+    <section class="container-fluid px-0">
+        <div class="row justify-content-around archiveSection">
+            <div class="col-xl-2 col-lg-2 col-md-2 d-none d-xl-block d-lg-block d-md-block"></div>
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10">
+                <div class="archiveContainer text-white text-center d-flex flex-column align-items-center">
+                    <div id="archiveBox" class="d-flex flex-column justify-content-top align-items-center">
+                        <table class="book-table-head">
+                            <tr class="book-head-row">
+                                <td class="book-head-col">Title</td>
+                                <td class="book-head-col">Author</td>
+                                <td class="book-head-col">Year</td>
+                                <td class="book-head-col">Publisher</td>
+                            </tr>
+                        </table>
+                        <table class="book-table">
+                            <% books.forEach(function(book){ %>
+                                <tr class="book-table-row">
+                                    <td class="book-table-col"><a class="book-show-link" href="/books/<%= book._id %>"><%= book.title %></a></td>
+                                    <td class="book-table-col"><%= book.author %></td>
+                                    <td class="book-table-col"><%= book.year %></td>
+                                    <td class="book-table-col"><%= book.publisher %></td>
+                                </tr>
+                            <% }); %> 
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2 d-none d-xl-block d-lg-block d-md-block"></div>
+        </div>
+    </section>
+
+<% include ../partials/footer %>

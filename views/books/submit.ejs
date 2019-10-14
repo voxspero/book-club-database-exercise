@@ -1,0 +1,73 @@
+<% include ../partials/header %>
+
+    <section class="container-fluid px-0">
+        <div class="row justify-content-around bookdropSection">
+            <div class="col-xl-3 col-lg-2 col-md-2 d-none d-xl-block d-lg-block d-md-block"></div>
+            <div class="col-xl-6 col-lg-8 col-md-8 col-sm-10">
+                <div class="bookdropContainer text-white text-center d-flex flex-column align-items-center">
+                    <div id="dropBox" class="d-flex flex-column justify-content-center align-items-center">
+                        <h1 class="welcomeHead">BOOK DROP</h1>
+                        <p class="welcomeText">Submit a book to the database! 
+                            Please follow the format outlined <a href="/format" class="guide-link">here.</a></p>
+                        <form class="dropForm d-none d-lg-block d-md-block" action="/books" method="POST">
+                            <div class="input-group book-input mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Title</span>
+                                    </div>
+                                    <input id="#title" type="text" name="title" class="form-control" placeholder="">
+                            </div>
+                            <div class="input-group book-input mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Author</span>
+                                    </div>
+                                    <input id="#author" type="text" name="author" class="form-control" placeholder="">
+                            </div>
+                            <div class="input-group book-input mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Year</span>
+                                    </div>
+                                    <input id="#year" type="text" name="year" class="form-control" placeholder="">
+                            </div>
+                            <div class="input-group book-input mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Publisher</span>
+                                    </div>
+                                    <input id="#publisher" type="text" name="publisher" class="form-control" placeholder="">
+                            </div>
+                            <input id="#submitButton" class="btn btn-info" type="submit" value="SUBMIT">
+                        </form>
+                        <form class="dropForm d-sm-block d-md-none d-lg-none d-xl-none" action="/books" method="POST">
+                                <div class="input-group book-input mb-3 mt-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Title</span>
+                                        </div>
+                                        <input id="#title" type="text" name="book[title]" class="form-control" placeholder="">
+                                </div>
+                                <div class="input-group book-input mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Author</span>
+                                        </div>
+                                        <input id="#author" type="text" name="book[author]" class="form-control" placeholder="">
+                                </div>
+                                <div class="input-group book-input mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Publisher</span>
+                                        </div>
+                                        <input id="#publisher" type="text" name="book[publisher]" class="form-control" placeholder="">
+                                </div>
+                                <div class="input-group book-input mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Year</span>
+                                        </div>
+                                        <input id="#year" type="text" name="book[year]" class="form-control" placeholder="">
+                                </div>
+                                <input class="btn btn-info" type="submit" value="SUBMIT">
+                            </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-2 col-md-2 d-none d-xl-block d-lg-block d-md-block"></div>
+        </div>
+    </section>
+
+<% include ../partials/footer %>

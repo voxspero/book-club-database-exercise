@@ -1,0 +1,48 @@
+<% include ./partials/header %>
+
+<section class="container-fluid px-0">
+    <div class="row justify-content-around bookdropSection">
+        <div class="col-xl-3 col-lg-2 col-md-2 d-none d-xl-block d-lg-block d-md-block"></div>
+        <div class="col-xl-6 col-lg-8 col-md-8 col-sm-10">
+            <div class="bookdropContainer text-white text-center d-flex flex-column align-items-center">
+                <div id="dropBox" class="d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="welcomeHead">SIGN UP</h1>
+                    <p class="welcomeText">Welcome to the club!</p>
+                    <form class="dropForm d-none d-lg-block d-md-block" action="/register" method="POST">
+                        <div class="input-group book-input mb-3 mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Username</span>
+                            </div>
+                            <input type="text" name="username" class="form-control" placeholder="">
+                    </div>
+                    <div class="input-group book-input mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Password</span>
+                            </div>
+                            <input type="password" name="password" class="form-control" placeholder="">
+                        </div>
+                    <input class="btn btn-info" type="submit" value="SIGN UP">
+                    </form>
+                    <form class="dropForm d-sm-block d-md-none d-lg-none d-xl-none" action="/register" method="POST">
+                            <div class="input-group book-input mb-3 mt-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Username</span>
+                                    </div>
+                                    <input type="text" name="username" class="form-control" placeholder="">
+                            </div>
+                            <div class="input-group book-input mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Password</span>
+                                    </div>
+                                    <input type="password" name="password" class="form-control" placeholder="">
+                                </div>
+                            <input class="btn btn-info" type="submit" value="SIGN UP">
+                        </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-2 col-md-2 d-none d-xl-block d-lg-block d-md-block"></div>
+    </div>
+</section>
+
+<% include ./partials/footer %>

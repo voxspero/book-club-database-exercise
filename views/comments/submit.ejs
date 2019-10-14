@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+    <section class="container-fluid px-0">
+        <div class="row justify-content-around bookdropSection">
+            <div class="col-xl-3 col-lg-2 col-md-2 d-none d-xl-block d-lg-block d-md-block"></div>
+            <div class="col-xl-6 col-lg-8 col-md-8 col-sm-10">
+                <div class="bookdropContainer text-white text-center d-flex flex-column align-items-center">
+                    <div id="dropBox" class="d-flex flex-column justify-content-center align-items-center">
+                        <h1 class="welcomeHead">ADD A COMMENT</h1>
+                        <p class="welcomeText">What did you think of <a class="book-title-return" href="/books/<%= book._id %>"><%= book.title %></a>?</p>
+                        <form class="dropForm" action="/books/<%= book._id %>/comments" method="POST">
+                            <h5 class="text-left">User</h4>
+                            <div class="input-group book-input mb-3">
+                                <input id="" type="text" name="comment[author]" class="form-control" placeholder="">
+                            </div>
+                            <h5 class="text-left">Comment</h4>
+                            <div class="input-group book-input mb-3">
+                                <textarea class="form-control" name="comment[text]" required></textarea>
+                            </div>
+                            <input id="#submitButton" class="btn btn-info mt-2" type="submit" value="SUBMIT">
+                        </form>
+                        <!-- <form class="dropForm d-sm-block d-md-none d-lg-none d-xl-none" action="#">
+                                <div class="input-group book-input mb-3">
+                                    <input id="" type="text" name="author" class="form-control" placeholder="">
+                                </div>
+                                <div class="input-group book-input mb-3">
+                                    <textarea type="text" name="text" class="form-control" placeholder=""></textarea>
+                                </div>
+                                <input id="#submitButton" class="btn btn-info" type="submit" value="SUBMIT">
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-2 col-md-2 d-none d-xl-block d-lg-block d-md-block"></div>
+        </div>
+    </section>
+
+<% include ../partials/footer %>
