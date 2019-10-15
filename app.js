@@ -159,10 +159,11 @@ app.get("/login", function(req, res){
 
 // app.post("/login", middleware, callback);
 
-app.post("/login", passport.authenticate("local", {
-	successRedirect: "/books",
-	failureRedirect: "/login" 
-}), function(res, req){
+app.post("/login", passport.authenticate("local", 
+	{
+		successRedirect: "/books",
+		failureRedirect: "/login" 
+	}), function(res, req){
 });
 
 app.get("/logout", function(req, res){
@@ -170,11 +171,11 @@ app.get("/logout", function(req, res){
 	res.redirect("/books");
 });
 
-function isLoggedIn(res, req, next){
-	if(req.user.authenticated){
-		return next();
-	}	
-	res.redirect("/login");
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
 }
 
 app.listen(3000, function() {
